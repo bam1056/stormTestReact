@@ -29,7 +29,6 @@ app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build/index.html'));
 });
 
-//app.use('/', routes);
 
 app.on('stormpath.ready', function () {
   app.listen(3000, 'localhost', function (err) {

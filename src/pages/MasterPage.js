@@ -4,15 +4,13 @@ import { LoginLink } from 'react-stormpath';
 import DocumentTitle from 'react-document-title';
 import Header from './Header';
 
-export default class MasterPage extends React.Component {
-  render() {
-    return (
-      <DocumentTitle title='My React App'>
-        <div className='MasterPage'>
-          <Header />
-          { this.props.children && React.cloneElement(this.props.children, {name: 'Brett'}) }
-        </div>
-      </DocumentTitle>
-    );
-  }
-}
+const MasterPage = (props) => (
+  <DocumentTitle title='My React App'>
+    <div className='MasterPage'>
+      <Header />
+      { props.children }
+    </div>
+  </DocumentTitle>
+);
+
+export default MasterPage;
